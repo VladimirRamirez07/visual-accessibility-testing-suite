@@ -1,6 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const AxeBuilder = require('@axe-core/playwright').default;
 const fs = require('fs');
+const path = require('path');
 
 const pagesToTest = [
   { name: 'homepage', path: '/' },
@@ -10,6 +11,12 @@ const pagesToTest = [
 ];
 
 test.describe('WCAG 2.1/2.2 Accessibility Tests', () => {
+
+  test.beforeAll(() => {
+    if (!fs.existsSync('reports')) {
+      fs.mkdirSync('reports', { recursive: true });
+    }
+  });
 
   for (const pageInfo of pagesToTest) {
     test(`[${pageInfo.name}] should meet WCAG 2.1/2.2 standards`, async ({ page }) => {
