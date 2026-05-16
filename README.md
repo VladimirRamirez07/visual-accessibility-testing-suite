@@ -61,6 +61,20 @@ npx playwright test
 - Visual UI regressions comparing screenshots
 - Automated reports on every push via GitHub Actions
 
+## 🤖 Optional: Applitools AI Visual Testing
+
+This suite supports integration with [Applitools Eyes](https://applitools.com) for AI-powered visual comparison.
+
+To enable it:
+
+```bash
+npm install --save-dev @applitools/eyes-playwright
+export APPLITOOLS_API_KEY=your_api_key
+npx playwright test tests/visual/applitools.test.js
+```
+
+> Applitools uses AI trained on 4 billion screens to detect visual regressions with human-like judgment.
+
 ## 🔍 Real findings on w3schools.com
 - 🔴 [SERIOUS] color-contrast — insufficient contrast ratio (3.01, minimum 4.5)
 - 🔴 [CRITICAL] image-alt — images missing alternative text
