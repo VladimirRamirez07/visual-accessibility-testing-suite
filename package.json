@@ -1,19 +1,29 @@
 {
   "name": "visual-accessibility-testing-suite",
   "version": "1.0.0",
-  "description": "Automated visual regression &amp; WCAG 2.1/2.2 accessibility testing suite using Playwright, Axe-Core, Resemble.js and Applitools",
+  "description": "Automated visual regression & WCAG 2.1/2.2 accessibility testing suite using Playwright, Axe-Core, Resemble.js and Applitools",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "playwright test",
+    "test:accessibility": "playwright test tests/accessibility/",
+    "test:visual": "playwright test tests/visual/",
+    "test:report": "playwright show-report"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/VladimirRamirez07/visual-accessibility-testing-suite.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "keywords": [
+    "playwright",
+    "accessibility",
+    "wcag",
+    "axe-core",
+    "visual-testing",
+    "qa-automation"
+  ],
+  "author": "VladimirRamirez07",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/VladimirRamirez07/visual-accessibility-testing-suite/issues"
   },
